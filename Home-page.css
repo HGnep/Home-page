@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
+
+:root {
+	--backgroundColour:  #68f760
+}
+
+body {
+	background-color: var(--backgroundColour);
+	font-family: "Raleway", sans-serif;
+	margin: 0;
+}
+
+.grid {
+	/*padding:10px;*/
+	display:grid;
+	min-height:100vh;
+	min-width:100vw;
+	grid-template-columns: 100px repeat(2, 1fr) repeat(4, 100px);
+	grid-template-rows:  1fr repeat(4, 100px) 1fr 1fr;
+	grid-template-areas:
+		"....... search  search  search  search  search  ......."
+		"links   links   links   clock   clock   clock   clock  "
+		"links   links   links   clock   clock   clock   clock  "
+		"links   links   links   clock   clock   clock   clock  "
+		"links   links   links   clock   clock   clock   clock  "
+		"links   links   links   weather weather weather weather"
+		"links   links   links   weather weather weather weather"
+}
+
+.grid__item {
+	width:100%;
+}
+
+.search {
+	background-color:red;
+	grid-area: search;
+}
+
+.links {
+	background-color:blue;
+	grid-area:links;
+}
+
+.clock {
+	background-color:green;
+	grid-area:clock
+}
+
+.weather {
+	background-color:orange;
+	grid-area: weather;
+}
