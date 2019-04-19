@@ -3,7 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Startpagina</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="Home-page.css">
+    <script type="text/javascript" src="clock.js"></script>
+    <script type="text/javascript" src="Home-page.js"></script>
 </head>
 
 <body>
@@ -17,8 +20,12 @@
 		Some links
 	</div>
 
-	<div class="grid__item clock">
-		A clock, digital or analog
+	<div id="clock" class="grid__item clock">
+        <div id="clock--digital" class="clock--digital">
+            digital
+        </div>
+        <div class="clock--analog">
+        </div>
 	</div>
 
 	<div class="grid__item weather">

@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
 
+@font-face{
+ font-family:'digital-clock';
+ src: url('fonts/digital-clock.ttf');
+}
 :root {
 	--backgroundColour:  #68f760
 }
@@ -12,9 +16,9 @@ body {
 
 .grid {
 	/*padding:10px;*/
-	display:grid;
-	min-height:100vh;
-	min-width:100vw;
+	display: grid;
+	min-height: 100vh;
+	min-width: 100vw;
 	grid-template-columns: 100px repeat(2, 1fr) repeat(4, 100px);
 	grid-template-rows:  1fr repeat(4, 100px) 1fr 1fr;
 	grid-template-areas:
@@ -28,25 +32,35 @@ body {
 }
 
 .grid__item {
-	width:100%;
+	width: 100%;
 }
 
 .search {
-	background-color:red;
+	background-color: red;
 	grid-area: search;
 }
 
 .links {
-	background-color:blue;
-	grid-area:links;
+	background-color: blue;
+	grid-area: links;
 }
 
 .clock {
-	background-color:green;
-	grid-area:clock
+	background-color: green;
+	grid-area: clock;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.clock--digital {
+	font-size: 4rem;
+	background-color:black;
+	color: white;
+	font-family: digital-clock;
 }
 
 .weather {
-	background-color:orange;
+	background-color: orange;
 	grid-area: weather;
 }
