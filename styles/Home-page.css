@@ -1,15 +1,23 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,700");
-
 @font-face{
- font-family:'digital-clock';
+    font-family: 'Raleway';
+    src: url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+}
+@font-face{
+ font-family: 'digital-clock';
  src: url('../fonts/digital-clock.ttf');
 }
+
 :root {
-	--backgroundColour:  #68f760
+	--colour1: #e4fde1;
+    --colour2: #8acb88;
+    --colour3: #648381;
+    --colour4: #575761;
+    --colour5: #ffbf46;
 }
 
 body {
-	background-color: var(--backgroundColour);
+    color: var(--colour4);
+	background-color: var(--colour1);
 	font-family: "Raleway", sans-serif;
 	margin: 0;
     font-size:16px;
@@ -21,8 +29,8 @@ body {
 	min-height: 100vh;
     max-height: 100vh;
 	min-width: 100vw;
-	grid-template-columns: 100px repeat(2, 1fr) repeat(4, 10vh);
-	grid-template-rows:  1fr repeat(4, 10vh) 1fr 1fr;
+	grid-template-columns: 10vh repeat(2, 1fr) repeat(4, 10vh);
+	grid-template-rows:  15vh repeat(4, 10vh) 1fr 1fr;
 	grid-template-areas:
 		"....... search  search  search  search  search  ......."
 		"links   links   links   clock   clock   clock   clock  "
@@ -38,12 +46,45 @@ body {
 }
 
 .search {
-	background-color: red;
 	grid-area: search;
+    padding-top: 1rem;
+}
+
+.search__form {
+    height: calc(100% - 1rem);
+    display:grid;
+    grid-template-columns: 90% minmax(40px, 10%);
+	grid-template-areas:
+		"field button";
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px 0px var(--colour4);
+}
+
+.search__field {
+    background-color: var(--colour2);
+    color: var(--colour4);
+    font-size: 5vh;
+    grid-area: field;
+    border: 1px solid var(--colour3);
+    border-radius: 5px 0px 0px 5px;
+    /*add google icon in front of field */
+    background-image: url('../img/Google.png');
+    background-size: 7vh;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-position: 2vh;
+    padding-left: 10vh;
+}
+
+.search__button {
+    background-color: var(--colour3);
+    grid-area: button;
+    cursor: pointer;
+    border: none;
+    border-radius: 0 5px 5px 0;
 }
 
 .links {
-	/*background-color: blue;*/
 	grid-area: links;
     overflow-y: auto;
     display: flex;
@@ -54,7 +95,6 @@ body {
 
 .links__item {
     padding: 1em;
-    /*background-color: #123456;*/
 }
 
 .links__item img {
@@ -72,8 +112,8 @@ body {
 
 .clock--digital {
 	font-size: 8vh; /*width of container is based on vh*/
-	background-color:black;
-	color: white;
+	background-color: var(--colour4);
+	color: var(--colour5);
 	font-family: digital-clock;
 }
 
