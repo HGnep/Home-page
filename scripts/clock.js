@@ -6,7 +6,7 @@ function clock() {
 
 function updateClockDigital() {
     var now = new Date();
-    var elt = document.getElementById('clock--digital')
+    const elt = document.getElementById('clock--digital')
 
     //get current time in nice format value
     var AMorPM = "AM"
@@ -33,7 +33,7 @@ function updateClockDigital() {
 }
 
 function makeClock(digitalOrAnalog) {
-    var div = document.getElementById('clock');
+    const div = document.getElementById('clock');
     if (div == null) {
         console.log('div is null');
         return;
@@ -48,7 +48,7 @@ function makeClock(digitalOrAnalog) {
         if (div.classList.contains('clock--digital')) {
             div.classList.remove('clock--digital');
         }
-        div.classList.add('clock--digital');
+        div.classList.add('clock--analog');
     }
     else {
         console.log('invalid value for digitalOrAnalog');

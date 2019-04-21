@@ -2,7 +2,7 @@
 
 @font-face{
  font-family:'digital-clock';
- src: url('fonts/digital-clock.ttf');
+ src: url('../fonts/digital-clock.ttf');
 }
 :root {
 	--backgroundColour:  #68f760
@@ -12,15 +12,17 @@ body {
 	background-color: var(--backgroundColour);
 	font-family: "Raleway", sans-serif;
 	margin: 0;
+    font-size:16px;
 }
 
 .grid {
 	/*padding:10px;*/
 	display: grid;
 	min-height: 100vh;
+    max-height: 100vh;
 	min-width: 100vw;
-	grid-template-columns: 100px repeat(2, 1fr) repeat(4, 100px);
-	grid-template-rows:  1fr repeat(4, 100px) 1fr 1fr;
+	grid-template-columns: 100px repeat(2, 1fr) repeat(4, 10vh);
+	grid-template-rows:  1fr repeat(4, 10vh) 1fr 1fr;
 	grid-template-areas:
 		"....... search  search  search  search  search  ......."
 		"links   links   links   clock   clock   clock   clock  "
@@ -41,8 +43,23 @@ body {
 }
 
 .links {
-	background-color: blue;
+	/*background-color: blue;*/
 	grid-area: links;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.links__item {
+    padding: 1em;
+    /*background-color: #123456;*/
+}
+
+.links__item img {
+    height: 100px;
+    width: 100px;
 }
 
 .clock {
@@ -54,7 +71,7 @@ body {
 }
 
 .clock--digital {
-	font-size: 4rem;
+	font-size: 8vh; /*width of container is based on vh*/
 	background-color:black;
 	color: white;
 	font-family: digital-clock;
