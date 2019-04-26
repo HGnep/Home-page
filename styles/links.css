@@ -1,0 +1,17 @@
+.links {
+	grid-area:       links;
+    overflow-y:      auto;
+    display:         flex;
+    flex-wrap:       wrap;
+    justify-content: space-between;
+    align-items:     flex-start;
+}
+
+.links__item {
+    padding: 1em;
+}
+
+.links__item img {
+    height: 100px;
+    width:  100px;
+}

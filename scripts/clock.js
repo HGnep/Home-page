@@ -1,6 +1,12 @@
 function clock() {
+    //analog or digital?
+    const cookieValue = getOrSetClockCookie();
+    //check radiobutton
+    const radioBtn = document.getElementById(cookieValue);
+    radioBtn.checked = true;
+    //draw clock and update it
+    setClock(cookieValue);
     updateClockDigital();
-    makeClock('digital');
     setInterval(function(){ updateClockDigital(); }, 500);
 }
 
@@ -32,25 +38,43 @@ function updateClockDigital() {
     elt.innerHTML = timeString;
 }
 
-function makeClock(digitalOrAnalog) {
-    const div = document.getElementById('clock');
-    if (div == null) {
-        console.log('div is null');
-        return;
-    }
+function setClock(digitalOrAnalog) {
+
+    const analog = document.getElementById('clock--analog');
+    const digital = document.getElementById('clock--digital');
+
     if (digitalOrAnalog === 'digital') {
-        if (div.classList.contains('clock--analog')) {
-            div.classList.remove('clock--analog');
-        }
-        div.classList.add("clock--digital");
+        analog.style.display = "none";
+        digital.style.display = "block";
     }
     else if (digitalOrAnalog === 'analog') {
-        if (div.classList.contains('clock--digital')) {
-            div.classList.remove('clock--digital');
-        }
-        div.classList.add('clock--analog');
+        analog.style.display = "block";
+        digital.style.display = "none";
     }
     else {
-        console.log('invalid value for digitalOrAnalog');
+        console.log('invalid value for digitalOrAnalog: ', digitalOrAnalog);
     }
+}
+
+function getOrSetClockCookie() {
+    var cookie = Cookies.get('clock');
+    if (typeof cookie === 'undefined' || cookie === null || cookie === '') {
+        makeCookie('clock', 'digital');
+        return 'digital';
+    }
+    else {
+        return cookie;
+    }
+}
+
+function clockChanged() {
+    let value = "";
+    var radios = document.getElementsByName('anOrDig');
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            value = radios[i].value;
+        }
+    }
+    makeCookie('clock', value);
+    setClock(value);
 }

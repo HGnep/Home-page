@@ -1,0 +1,58 @@
+/* This only works in newer browsers. To prevent in from happening in older browsers
+     you can add :not(old) to every selector. But I don't care about older browsers */
+
+/* First remove old checkboxes1 */
+input[type=checkbox],
+input[type=radio   ] {
+  width     : 2em;
+  margin    : 0;
+  padding   : 0;
+  font-size : 1em;
+  opacity   : 0;
+}
+
+/* Style the label */
+input[type=checkbox] + label,
+input[type=radio   ] + label{
+  display      : inline-block;
+  line-height  : 1.25em;
+  margin       :  0px;
+}
+
+/* make new checkboxes */
+input[type=checkbox] + label > span,
+input[type=radio   ] + label > span{
+  display          : inline-block;
+  width            : 0.875em;
+  height           : 0.875em;
+  margin           : 0.25em 0.5em 0.25em 0.25em;
+  border           : 1px solid var(--colour5);
+  border-radius    : 0.25em;
+  background-image : linear-gradient(var(--colour1),var(--colour2));
+  vertical-align   : bottom;
+}
+
+/* checkboxes when checked */
+input[type=radio]:checked +  label > span ::before,
+input[type=checkbox]:checked + label > span::before{
+  content     : '✓';
+  display     : block;
+  width       : 1em;
+  color       : var(--colour4);
+  font-size   : 0.875em;
+  line-height : 1em;
+  text-align  : center;
+  text-shadow : 0 0 0.0714em rgb(115,153,77);
+  font-weight : bold;
+}
+/*
+input[type=radio]:checked +  label > span > span{
+  display          : block;
+  width            : 0.5em;
+  height           : 0.5em;
+  margin           : 0.125em;
+  border           : 0.0625em solid rgb(115,153,77);
+  border-radius    : 0.125em;
+  background       : var(--colour5);
+  /* background-image : linear-gradient(rgb(179,217,140),rgb(153,204,102)); */
+} */

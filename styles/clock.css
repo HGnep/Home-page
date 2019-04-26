@@ -1,0 +1,19 @@
+.clock {
+	background-color: var(--colour4);
+    color: var(--colour5);
+	grid-area: clock;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position:relative;
+}
+
+.clock--digital {
+	font-family: digital-clock;
+	font-size: 12vh; /*width of container is based on vh*/
+}
+
+.clock__selection {
+	position: absolute;
+	top: 10px;
+}

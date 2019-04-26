@@ -5,6 +5,12 @@
 	<title>Startpagina</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="styles\Home-page.css">
+    <link rel="stylesheet" href="styles\clock.css">
+    <link rel="stylesheet" href="styles\links.css">
+    <link rel="stylesheet" href="styles\weather.css">
+    <link rel="stylesheet" href="styles\search.css">
+    <link rel="stylesheet" href="styles\radioAndCheckboxes.css">
+    <script type="text/javascript" src="scripts\Cookies.js"></script>
     <script type="text/javascript" src="scripts\clock.js"></script>
     <script type="text/javascript" src="scripts\links.js"></script>
     <script type="text/javascript" src="scripts\Home-page.js"></script>
@@ -36,10 +42,21 @@
 	</div>
 
 	<div id="clock" class="grid__item clock">
+        <div class="clock__selection">
+            <input id="analog" type="radio" name="anOrDig" value="analog" onclick="clockChanged();">
+            <label for="analog" class="radioLabel">
+                <span><span></span></span>Analog
+            </label>
+            <input id="digital" type="radio" name="anOrDig" value="digital" onclick="clockChanged();">
+            <label for="digital" class="radioLabel">
+                <span><span></span></span>Digital
+            </label>
+        </div>
         <div id="clock--digital" class="clock--digital">
             digital
         </div>
-        <div class="clock--analog">
+        <div id="clock--analog" class="clock--analog">
+            Analog clock does not exist yet
         </div>
 	</div>
 

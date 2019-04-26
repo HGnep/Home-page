@@ -1,0 +1,38 @@
+.search {
+	grid-area: search;
+    padding-top: 1rem;
+}
+
+.search__form {
+    height: calc(100% - 1rem);
+    display:grid;
+    grid-template-columns: 90% minmax(40px, 10%);
+	grid-template-areas:
+		"field button";
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px 0px var(--colour4);
+}
+
+.search__field {
+    background-color: var(--colour2);
+    color: var(--colour4);
+    font-size: 5vh;
+    grid-area: field;
+    border: 1px solid var(--colour3);
+    border-radius: 5px 0px 0px 5px;
+    /*add google icon in front of field */
+    background-image: url('../img/Google.png');
+    background-size: 7vh;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-position: 2vh;
+    padding-left: 10vh;
+}
+
+.search__button {
+    background-color: var(--colour3);
+    grid-area: button;
+    cursor: pointer;
+    border: none;
+    border-radius: 0 5px 5px 0;
+}

@@ -16,7 +16,8 @@ function makeLinks() {
         link('https://www.overleaf.com/',   'img/Overleaf.png',    'Overleaf'),
         link('https://open.spotify.com/',   'img/Spotify.png',     'Spotify'),
         link('https://web.whatsapp.com/',   'img/Whatsapp.png',    'Whatsapp'),
-        link('https://www.netflix.com/',    'img/Netflix.png',     'Netflix')
+        link('https://www.netflix.com/',    'img/Netflix.png',     'Netflix'),
+        link('https://nos.nl/',             'img/NOS.jpg',         'NOS')
     ];
 
     var html = "";

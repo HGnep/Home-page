@@ -24,13 +24,11 @@ body {
 }
 
 .grid {
-	/*padding:10px;*/
 	display: grid;
-	min-height: 100vh;
-    max-height: 100vh;
-	min-width: 100vw;
-	grid-template-columns: 10vh repeat(2, 1fr) repeat(4, 10vh);
-	grid-template-rows:  15vh repeat(4, 10vh) 1fr 1fr;
+	height: 100vh;
+	width: 100vw;
+	grid-template-columns: 10vh repeat(2, 1fr) repeat(4, 15vh);
+	grid-template-rows:  15vh repeat(4, 15vh) 1fr 1fr;
 	grid-template-areas:
 		"....... search  search  search  search  search  ......."
 		"links   links   links   clock   clock   clock   clock  "
@@ -45,79 +43,7 @@ body {
 	width: 100%;
 }
 
-.search {
-	grid-area: search;
-    padding-top: 1rem;
-}
-
-.search__form {
-    height: calc(100% - 1rem);
-    display:grid;
-    grid-template-columns: 90% minmax(40px, 10%);
-	grid-template-areas:
-		"field button";
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px 0px var(--colour4);
-}
-
-.search__field {
-    background-color: var(--colour2);
-    color: var(--colour4);
-    font-size: 5vh;
-    grid-area: field;
-    border: 1px solid var(--colour3);
-    border-radius: 5px 0px 0px 5px;
-    /*add google icon in front of field */
-    background-image: url('../img/Google.png');
-    background-size: 7vh;
-    background-position: right;
-    background-repeat: no-repeat;
-    background-position: 2vh;
-    padding-left: 10vh;
-}
-
-.search__button {
-    background-color: var(--colour3);
-    grid-area: button;
+.radioLabel {
     cursor: pointer;
-    border: none;
-    border-radius: 0 5px 5px 0;
-}
-
-.links {
-	grid-area: links;
-    overflow-y: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.links__item {
-    padding: 1em;
-}
-
-.links__item img {
-    height: 100px;
-    width: 100px;
-}
-
-.clock {
-	background-color: green;
-	grid-area: clock;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.clock--digital {
-	font-size: 8vh; /*width of container is based on vh*/
-	background-color: var(--colour4);
-	color: var(--colour5);
-	font-family: digital-clock;
-}
-
-.weather {
-	background-color: orange;
-	grid-area: weather;
+    user-select: none;
 }
