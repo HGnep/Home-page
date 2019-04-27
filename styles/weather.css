@@ -5,12 +5,14 @@
 	grid-template-columns: 1vh repeat(6, 1fr) 1vh;
 	grid-template-rows:  1vh repeat(6, 1fr) 1vh;
 	grid-template-areas:
-		"....... ....... ....... ....... ....... ......."
-		"....... place   place   place   place   ......."
-		"....... ....... ....... temp    temp    ......."
-		"....... ....... ....... temp    temp    ......."
-		"....... summary summary summary summary ......."
-		"....... ....... ....... ....... ....... ......."
+		"....... ....... ....... ....... ....... ....... ......."
+		"....... place   place   place   place   place   ......."
+		"....... ....... ....... temp    temp    temp    ......."
+		"....... ....... ....... temp    temp    temp    ......."
+		"....... ....... ....... temp    temp    temp    ......."
+		"....... summary summary ....... ....... ....... ......."
+		"....... summary summary ....... ....... ....... ......."
+		"....... ....... ....... ....... ....... ....... ......."
 }
 
 .weather__place {

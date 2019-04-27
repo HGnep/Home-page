@@ -3,7 +3,6 @@ function updateWeather() {
     if (data === 'loading') {
         // try again after one second
         setTimeout(updateWeather, 1000);
-        console.log('loading');
         return
     }
     drawWeather(data);
@@ -41,11 +40,11 @@ function getWeatherCookie() {
         cookie = 'loading'
     }
     else {
-        const timestamp = new Date(Cookies.get('weatherTimestamp'));
-        diffTimeInMs = timestamp - now.valueOf();
-        if (diffTimeInMs < 1000*60*5) {
+        const timestamp = Cookies.get('weatherTimestamp');
+        diffTimeInMs = now.valueOf() - timestamp;
+        if (diffTimeInMs > 1000*60*5) {
             makeNewWeatherCookie(now);
-            if (diffTimeInMs < 1000*60*60*2) {
+            if (diffTimeInMs > 1000*60*60*2) {
                 //if weatherinfo is older than 2 hours, don't show it.
                 cookie = 'loading'
             }
