@@ -1,10 +1,10 @@
 .links {
-	grid-area:       links;
-    overflow-y:      auto;
-    display:         flex;
-    flex-wrap:       wrap;
+	grid-area: links;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items:     flex-start;
+    align-items: flex-start;
 }
 
 .links__item {

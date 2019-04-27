@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="styles\weather.css">
     <link rel="stylesheet" href="styles\search.css">
     <link rel="stylesheet" href="styles\radioAndCheckboxes.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts\Cookies.js"></script>
-    <script type="text/javascript" src="scripts\clock.js"></script>
-    <script type="text/javascript" src="scripts\links.js"></script>
+    <script type="text/javascript" src="scripts\Clock.js"></script>
+    <script type="text/javascript" src="scripts\Links.js"></script>
+    <script type="text/javascript" src="scripts\Weather.js"></script>
     <script type="text/javascript" src="scripts\Home-page.js"></script>
 </head>
 
@@ -61,7 +63,15 @@
 	</div>
 
 	<div class="grid__item weather">
-		Forecast
+		<div id="weather__place" class="weather__place">
+            place
+        </div>
+        <div id="weather__temperature" class="weather__temperature">
+            x °C
+        </div>
+        <div id="weather__summary" class="weather__summary">
+            tekst in een of twee woorden
+        </div>
 	</div>
 </div>
 

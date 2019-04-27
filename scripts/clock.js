@@ -1,9 +1,11 @@
 function clock() {
     //analog or digital?
-    const cookieValue = getOrSetClockCookie();
+    const cookieValue = getClockCookie();
+
     //check radiobutton
     const radioBtn = document.getElementById(cookieValue);
     radioBtn.checked = true;
+
     //draw clock and update it
     setClock(cookieValue);
     updateClockDigital();
@@ -11,12 +13,12 @@ function clock() {
 }
 
 function updateClockDigital() {
-    var now = new Date();
+    const now = new Date();
     const elt = document.getElementById('clock--digital')
 
-    //get current time in nice format value
-    var AMorPM = "AM"
-    var hours = now.getHours();
+    //get current time as string
+    let AMorPM = "AM"
+    let hours = now.getHours();
     if (hours < 10) {
         hours =  "0" + hours;
     }
@@ -24,15 +26,15 @@ function updateClockDigital() {
         hours = hours - 12;
         AMorPM = "PM"
     }
-    var minutes = now.getMinutes();
+    let minutes = now.getMinutes();
     if (minutes < 10) {
         minutes = "0" + minutes;
     }
-    var seconds = now.getSeconds();
+    let seconds = now.getSeconds();
     if (seconds < 10) {
         seconds =  "0" + seconds;
     }
-    var timeString = hours + ":" + minutes + ":" + seconds + " " + AMorPM;
+    const timeString = hours + ":" + minutes + ":" + seconds + " " + AMorPM;
 
     //set clock value
     elt.innerHTML = timeString;
@@ -56,20 +58,18 @@ function setClock(digitalOrAnalog) {
     }
 }
 
-function getOrSetClockCookie() {
-    var cookie = Cookies.get('clock');
+function getClockCookie() {
+    let cookie = Cookies.get('clock');
     if (typeof cookie === 'undefined' || cookie === null || cookie === '') {
         makeCookie('clock', 'digital');
-        return 'digital';
+        cookie = 'digital';
     }
-    else {
-        return cookie;
-    }
+    return cookie;
 }
 
 function clockChanged() {
     let value = "";
-    var radios = document.getElementsByName('anOrDig');
+    const radios = document.getElementsByName('anOrDig');
     for (let i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             value = radios[i].value;

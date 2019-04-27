@@ -1,4 +1,40 @@
 .weather {
 	background-color: orange;
 	grid-area: weather;
+	display: grid;
+	grid-template-columns: 1vh repeat(6, 1fr) 1vh;
+	grid-template-rows:  1vh repeat(6, 1fr) 1vh;
+	grid-template-areas:
+		"....... ....... ....... ....... ....... ......."
+		"....... place   place   place   place   ......."
+		"....... ....... ....... temp    temp    ......."
+		"....... ....... ....... temp    temp    ......."
+		"....... summary summary summary summary ......."
+		"....... ....... ....... ....... ....... ......."
+}
+
+.weather__place {
+	grid-area: place;
+
+}
+
+.weather__temperature {
+	grid-area: temp;
+	font-size: 5em; /*should be relative to container size.. */
+}
+
+.weather__summary {
+	grid-area: summary;
+}
+
+.weather__image {
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	height: calc(100% - 2em);
+}
+
+.weather__image img {
+	max-height: 100%;
+	max-width: 100%;
 }
