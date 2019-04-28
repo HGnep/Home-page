@@ -1,11 +1,18 @@
 .clock {
 	background-color: var(--colour4);
     color: var(--colour5);
-	grid-area: clock;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
+}
+
+.clock--hide {
+	display: none;
+}
+
+.clock--show {
+	grid-area: clock;
 }
 
 .clock--digital {

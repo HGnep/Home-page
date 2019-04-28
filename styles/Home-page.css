@@ -15,6 +15,10 @@
     --colour5: #ffbf46;
 }
 
+
+*, *::before, *::after {
+    box-sizing: border-box
+}
 body {
     color: var(--colour4);
 	background-color: var(--colour1);
@@ -36,14 +40,6 @@ body {
 		"links   links   links   clock   clock   clock   clock  "
 		"links   links   links   clock   clock   clock   clock  "
 		"links   links   links   weather weather weather weather"
-		"links   links   links   weather weather weather weather"
-}
-
-.grid__item {
-	width: 100%;
-}
-
-.radioLabel {
-    cursor: pointer;
-    user-select: none;
+		"links   links   links   weather weather weather weather";
+    overflow: hidden;
 }

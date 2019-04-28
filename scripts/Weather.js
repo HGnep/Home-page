@@ -1,5 +1,5 @@
 function updateWeather() {
-    data = getWeatherCookie();
+    const data = getWeatherCookie();
     if (data === 'loading') {
         // try again after one second
         setTimeout(updateWeather, 1000);
@@ -7,6 +7,17 @@ function updateWeather() {
     }
     drawWeather(data);
     setTimeout(updateWeather, 60*1000);
+    $('#weather').click(arrowClick);
+}
+
+function arrowClick() {
+    const $weather = $('#weather');
+    const $clock = $('#clock');
+
+    $weather.toggleClass('weather--full weather--small');
+    $clock.toggleClass('clock--hide clock--show');
+
+    console.log('clicked!');
 }
 
 function drawWeather(data) {
@@ -17,19 +28,15 @@ function drawWeather(data) {
 
     //get weather data
     const weatherInfo = JSON.parse(data).liveweer[0];
-    console.log(weatherInfo);
 
     //place information on page
     weather__place.innerHTML = weatherInfo.plaats;
     weather__temperature.innerHTML = weatherInfo.temp + '°C';
     weather__summary.innerHTML = weatherInfo.samenv + ', ' + weatherInfo.image;
+    if (weatherInfo.alarm !== '0') {
+        weather__summary.innerHTML += weatherInfo.alarmtxt;
+    }
 }
-
-
-//updateWeather() {
-//
-//}
-
 
 function getWeatherCookie() {
     const now = new Date();

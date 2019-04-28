@@ -1,4 +1,9 @@
-/* This only works in newer browsers. To prevent in from happening in older browsers
+.radioLabel {
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Below only works in newer browsers. To prevent it from happening in older browsers
      you can add :not(old) to every selector. But I don't care about older browsers */
 
 /* First remove old checkboxes1 */

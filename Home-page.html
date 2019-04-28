@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles\weather.css">
     <link rel="stylesheet" href="styles\search.css">
     <link rel="stylesheet" href="styles\radioAndCheckboxes.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts\Cookies.js"></script>
     <script type="text/javascript" src="scripts\Clock.js"></script>
@@ -43,7 +44,7 @@
 		Some links
 	</div>
 
-	<div id="clock" class="grid__item clock">
+	<div id="clock" class="grid__item clock clock--show">
         <div class="clock__selection">
             <input id="analog" type="radio" name="anOrDig" value="analog" onclick="clockChanged();">
             <label for="analog" class="radioLabel">
@@ -62,15 +63,19 @@
         </div>
 	</div>
 
-	<div class="grid__item weather">
-		<div id="weather__place" class="weather__place">
-            
+    <div id="weather" class="grid__item weather weather--small">
+        <div class="weather__clock">
         </div>
-        <div id="weather__temperature" class="weather__temperature">
-            Loading..
+        <div class="weather__top">
         </div>
-        <div id="weather__summary" class="weather__summary">
-
+        <div class="weather__bottom">
+    		<div id="weather__place" class="weather__place">
+            </div>
+            <div id="weather__temperature" class="weather__temperature">
+                Loading..
+            </div>
+            <div id="weather__summary" class="weather__summary">
+            </div>
         </div>
 	</div>
 </div>
