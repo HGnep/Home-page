@@ -22,7 +22,7 @@ function updateClockDigital() {
     if (hours < 10) {
         hours =  "0" + hours;
     }
-    if (hours > 12) {
+    if (hours > 11) {
         hours = hours - 12;
         AMorPM = "PM"
     }
@@ -34,10 +34,14 @@ function updateClockDigital() {
     if (seconds < 10) {
         seconds =  "0" + seconds;
     }
-    const timeString = hours + ":" + minutes + ":" + seconds + " " + AMorPM;
+    const timeString = hours + ":" + minutes + ":" + seconds;// + " " + AMorPM;
 
     //set clock value
     elt.innerHTML = timeString;
+}
+
+function updateClockAnalog() {
+    const now = new Date();
 }
 
 function setClock(digitalOrAnalog) {
