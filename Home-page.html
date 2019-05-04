@@ -55,11 +55,16 @@
                 <span><span></span></span>Digital
             </label>
         </div>
-        <div id="clock--digital" class="clock--digital">
-            digital
-        </div>
-        <div id="clock--analog" class="clock--analog">
-            Analog clock does not exist yet
+        <div class="clock__body">
+            <div id="clock--digital" class="clock--digital">
+                digital
+            </div>
+            <div id="clock--analog" class="clock--analog">
+                <svg height="100%" width=100%>
+                    <circle id="clock-face" cx="50%" cy="50%" r="49%" stroke="black" stroke-width="3" fill="red" />
+                    <line id="second-hand" x1="50%" y1="50%" x2="0" y2="48%" stroke="black" stroke-width="3" />
+                </svg>
+            </div>
         </div>
 	</div>
 

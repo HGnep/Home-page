@@ -10,6 +10,8 @@ function clock() {
     setClock(cookieValue);
     updateClockDigital();
     setInterval(function(){ updateClockDigital(); }, 500);
+    updateClockAnalog();
+    setInterval(function(){ updateClockAnalog(); }, 500);
 }
 
 function updateClockDigital() {
@@ -42,6 +44,16 @@ function updateClockDigital() {
 
 function updateClockAnalog() {
     const now = new Date();
+    //seconds
+    const seconds = now.getSeconds();
+    let handLength = 48; //percent
+    let angle = (seconds === 0)? 0 : seconds / 60.0 * 2 * Math.PI;
+    angle = angle - 0.5 * Math.PI; //angle of zero is at 3 o'clock
+    let x_pos = Math.cos(angle) * handLength + 50;
+    let y_pos = Math.sin(angle) * handLength + 50;
+    let $hand = $('#second-hand');
+    $hand.attr('y2', y_pos + "%");
+    $hand.attr('x2', x_pos + "%");
 }
 
 function setClock(digitalOrAnalog) {
@@ -65,8 +77,8 @@ function setClock(digitalOrAnalog) {
 function getClockCookie() {
     let cookie = Cookies.get('clock');
     if (typeof cookie === 'undefined' || cookie === null || cookie === '') {
-        makeCookie('clock', 'digital');
-        cookie = 'digital';
+        makeCookie('clock', 'analog');
+        cookie = 'analog';
     }
     return cookie;
 }
