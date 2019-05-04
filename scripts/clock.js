@@ -46,7 +46,7 @@ function updateClockAnalog() {
     const now = new Date();
     //seconds
     let seconds = now.getSeconds();
-    let handLength = 48; //percent
+    let handLength = 45; //percent
     let angle = (seconds === 0)? 0 : seconds / 60.0 * 2 * Math.PI;
     angle = angle - 0.5 * Math.PI; //angle of zero is at 3 o'clock
     let x_pos = Math.cos(angle) * handLength + 50;
@@ -76,8 +76,30 @@ function updateClockAnalog() {
     $hand = $('#hour-hand');
     $hand.attr('y2', y_pos + "%");
     $hand.attr('x2', x_pos + "%");
-}
 
+    //minute lines
+    for (let i = 1; i <= 60; i++) {
+        const fiveMinute = i%5 === 0;
+        const svg = document.getElementById('svg-clock');
+        const element = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        const farDistance = 48;
+        const closeDistance = fiveMinute ? 40: 46;
+        const className = fiveMinute ? "fiveMinute-line" : "minute-line";
+        angle = i / 30 * Math.PI;
+        x1_pos = Math.cos(angle) * closeDistance + 50;
+        y1_pos = Math.sin(angle) * closeDistance + 50;
+        x2_pos = Math.cos(angle) * farDistance + 50;
+        y2_pos = Math.sin(angle) * farDistance + 50;
+        element.setAttribute('x1', x1_pos + "%");
+        element.setAttribute('y1', y1_pos + "%");
+        element.setAttribute('x2', x2_pos + "%");
+        element.setAttribute('y2', y2_pos + "%");
+        element.setAttribute('stroke', 'black');
+        element.setAttribute('stroke-width', 5);
+        element.setAttribute('class', className);
+        svg.appendChild(element);
+    }
+}
 
 function setClock(digitalOrAnalog) {
 

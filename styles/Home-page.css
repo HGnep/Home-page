@@ -22,7 +22,7 @@
 body {
     color: var(--colour4);
 	background-color: var(--colour1);
-	font-family: "Raleway", sans-serif;
+	font-family: "Raleway", fantasy, sans-serif;
 	margin: 0;
     font-size:16px;
 }
