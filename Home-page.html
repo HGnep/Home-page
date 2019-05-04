@@ -61,8 +61,12 @@
             </div>
             <div id="clock--analog" class="clock--analog">
                 <svg height="100%" width=100%>
-                    <circle id="clock-face" cx="50%" cy="50%" r="49%" stroke="black" stroke-width="3" fill="red" />
-                    <line id="second-hand" x1="50%" y1="50%" x2="0" y2="48%" stroke="black" stroke-width="3" />
+                    <circle id="clock-face" class="clock__face" cx="50%" cy="50%" r="49%" />
+                    <circle id="clock-center" class="clock__center" cx="50%" cy="50%" r="5%" />
+                    <circle id="clock-center_2" class="clock__center__center" cx="50%" cy="50%" r="2%" />
+                    <line id="second-hand" class="clock__hand--seconds" x1="50%" y1="50%" />
+                    <line id="minute-hand" class="clock__hand--minutes" x1="50%" y1="50%" />
+                    <line id="hour-hand" class="clock__hand--hours" x1="50%" y1="50%" />
                 </svg>
             </div>
         </div>

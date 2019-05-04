@@ -45,7 +45,7 @@ function updateClockDigital() {
 function updateClockAnalog() {
     const now = new Date();
     //seconds
-    const seconds = now.getSeconds();
+    let seconds = now.getSeconds();
     let handLength = 48; //percent
     let angle = (seconds === 0)? 0 : seconds / 60.0 * 2 * Math.PI;
     angle = angle - 0.5 * Math.PI; //angle of zero is at 3 o'clock
@@ -54,7 +54,30 @@ function updateClockAnalog() {
     let $hand = $('#second-hand');
     $hand.attr('y2', y_pos + "%");
     $hand.attr('x2', x_pos + "%");
+
+    //minutes
+    seconds += now.getMinutes() * 60;
+    handLength = 45; //percent
+    angle = (seconds === 0)? 0 : seconds / 3600.0 * 2 * Math.PI;
+    angle = angle - 0.5 * Math.PI; //angle of zero is at 3 o'clock
+    x_pos = Math.cos(angle) * handLength + 50;
+    y_pos = Math.sin(angle) * handLength + 50;
+    $hand = $('#minute-hand');
+    $hand.attr('y2', y_pos + "%");
+    $hand.attr('x2', x_pos + "%");
+
+    //hours
+    seconds += now.getHours() * 3600;
+    handLength = 35; //percent
+    angle = (seconds === 0)? 0 : seconds / 43200.0 * 2 * Math.PI;
+    angle = angle - 0.5 * Math.PI; //angle of zero is at 3 o'clock
+    x_pos = Math.cos(angle) * handLength + 50;
+    y_pos = Math.sin(angle) * handLength + 50;
+    $hand = $('#hour-hand');
+    $hand.attr('y2', y_pos + "%");
+    $hand.attr('x2', x_pos + "%");
 }
+
 
 function setClock(digitalOrAnalog) {
 
