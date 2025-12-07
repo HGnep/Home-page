@@ -1,0 +1,49 @@
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+.bookmarks:not(.displayNone) {
+	display:flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.bookmark {
+	padding:10px;
+	border-radius:20px;
+	width:75px;
+	margin-top:15px; /*to make enough space for the box-shadow*/
+}
+
+.bookmark:hover {
+	outline: 1px solid var(--colour-accent);
+	background-color: rgba(70, 70, 70, 0.5);
+	backdrop-filter: blur(20px);
+	box-shadow: 0px 0px 20px 2px var(--colour-accent);
+	outline-width: 1px;
+}
+
+.bookmark > .icon {
+	background-color: var(--colour-bg-main-alpha);
+	backdrop-filter: blur(20px);
+	padding:10px;
+	border-radius:20px;
+	width: 50px;
+	height:50px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	& > img {
+		width:80%;
+		height:80%;
+	}
+}
+
+.bookmark > .name {
+	color:white;
+	text-decoration: none;
+	margin-top:5px;
+	text-align:center;
+	font-size:var(--small);
+}

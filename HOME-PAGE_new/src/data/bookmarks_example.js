@@ -1,0 +1,38 @@
+const bookmarks_data = [
+	{
+		"name": "YouTube",
+		"url": "https://www.youtube.com",
+		"description": "Watch videos",
+		"img_name": "",
+		"prio": 0,
+		"category": "home", 
+		"subcategorie": ""
+	},
+	{
+		"name": "NOS",
+		"url": "https://nos.nl/",
+		"description": "",
+		"img_name": "",
+		"prio": 0,
+		"category": ["home", "work"],
+		"subcategorie": ""
+	},
+	{
+		"name": "Reddit",
+		"url": "https://reddit.com",
+		"description": "",
+		"img_name": "",
+		"prio": 0,
+		"category": "home", 
+		"subcategorie": ""
+	},
+	{
+		"name": "Gmail",
+		"url": "https://mail.google.com/",
+		"description": "",
+		"img_name": "",
+		"prio": 0,
+		"category": "home", 
+		"subcategorie": ""
+	}
+]

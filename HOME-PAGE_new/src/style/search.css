@@ -1,0 +1,50 @@
+:root {
+	--font-size:       1.5em;
+	--icon-width:      2.5em;
+}
+
+input {
+	flex-grow:1;
+	max-width:800px;
+	font-size:var(--font-size);
+	padding: 0.5em;
+	padding-left: var(--icon-width);
+	color: var(--colour-text-accent);
+	border-radius: 5px;
+	background-color: var(--colour-bg-main-alpha);
+	border:none;
+
+	/* Search logo in front -- misschien later een dropdown van maken dat je kunt kiezen waarmee je zoekt? */
+	background-image: url('../../Img/Icon/Google.png');
+	background-size: auto 60%;
+	background-repeat: no-repeat;
+	background-position-x:0.5em;
+	background-position-y:center;
+
+	/*caret*/
+	caret-color:var(--colour-text-main);
+
+	&::placeholder {
+		color:var(--colour-placeholder-text);
+	}
+ 	
+	&:focus {
+		backdrop-filter: blur(20px);
+		outline:solid var(--colour-accent);
+		box-shadow: 0px 0px 20px 2px var(--colour-accent);
+		outline-width: 1px;
+	}
+}
+input:focus::placeholder {
+	font-weight:normal;
+}
+
+#search {
+	width: 80%;
+	margin:auto;
+	display:flex;
+	flex-direction:row;
+	justify-content: space-around;
+}
+
+

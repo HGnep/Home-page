@@ -1,0 +1,85 @@
+:root {
+	--switch-bg-color: var(--colour-bg-main);
+	--switch-accent-color: var(--colour-accent);
+	--switch-btn-color: #83ff5d;
+}
+
+.switch {
+	width: 150px;
+	
+}
+
+.switch_label {
+	position:relative;
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--switch-bg-color);
+	border-radius:25px;
+	height:2em;
+	box-sizing:border-box;
+	user-select:none;
+
+	&:hover {
+		outline:solid var(--colour-accent);
+		box-shadow: 0px 0px 15px 2px var(--colour-accent);
+		outline-width: 2px;
+	}
+}
+
+.switch_label:before {
+	content: "";
+	position:absolute;
+	height:80%;
+	width:45%;
+	border-radius:1em;
+	background-color:var(--switch-btn-color);
+	left:0.2em;
+	right: initial;
+}
+
+.switch>input[type="checkbox"]:checked + .switch_label {
+	&:before {
+		transform: translateX(112%); /*45% width - je wil de start op 55% hebben.. ik zou zeggen dan wil je 122%, maar dit werkt */
+	}
+	& >.on {
+		font-weight:bold;
+		color:black;
+	}
+	& >.off {
+		color:white;
+	}
+}
+.switch>input[type="checkbox"]:not(:checked) + .switch_label {
+	&:before {
+		left:0.2em;
+		right: initial;
+	}
+	& >.off {
+		font-weight:bold;
+		color:black;
+	}
+	& >.on {
+		color:white;
+	}
+}
+
+
+.switch_label:before {
+  transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+.switch_label>.label {
+	z-index:2;
+}
+.switch_label .off {
+	padding-left: 15px;
+}
+.switch_label .on {
+	padding-right: 15px;
+}
+
+.switch input {
+	display:none;
+}
